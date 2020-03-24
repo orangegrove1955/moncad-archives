@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Menu from "./Menu";
 import Gallery from "./Gallery";
+import Landing from "./Landing";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       </nav>
       <main>
         <Switch>
+          <Route exact path="/" component={Landing} />
           <Route exact path="/Cheer">
             <Menu key={"cheer"} name={"Cheer"}></Menu>
           </Route>
