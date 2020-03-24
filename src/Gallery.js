@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-const Gallery = ({ path }) => {
+const Gallery = ({ match, location }) => {
   const [images, setImages] = useState([]);
 
   const getImages = async _ => {
     const data = await fetch(
-      `http://localhost:8080/getFiles/public/Dance/2019/Spring/Minerva`
+      `https://api.moncad.com.au/getFiles/public/${location.pathname}`
     );
     const json = await data.json();
     setImages(json);
+    console.log(location);
   };
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Gallery = ({ path }) => {
   return (
     <div className="grid">
       {images.map(image => (
-        <img src={`http://localhost:8080/${image}`} alt=""></img>
+        <img src={`https://api.moncad.com.au/${image}`} alt=""></img>
       ))}
     </div>
   );

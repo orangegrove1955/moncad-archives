@@ -5,7 +5,7 @@ const Menu = ({ name }) => {
   const [structure, setStructure] = useState([]);
 
   const getStructure = async _ => {
-    const data = await fetch(`http://localhost:8080/getStructure/${name}`);
+    const data = await fetch(`https://api.moncad.com.au/getStructure/${name}`);
     const json = await data.json();
     setStructure(json);
   };
@@ -22,9 +22,14 @@ const MenuItem = ({ structure }) => {
     <div>
       {structure.map(item => (
         <div>
-          <Link to={item.path.split("public")[1]}>{item.name}</Link>
+          {item.children.length == 0 && (
+            <Link to={item.path.split("public")[1]}>{item.name}</Link>
+          )}
           {item.children.length > 0 && (
-            <MenuItem structure={item.children}></MenuItem>
+            <div>
+              <p>{item.name}</p>
+              <MenuItem structure={item.children}></MenuItem>
+            </div>
           )}
         </div>
       ))}

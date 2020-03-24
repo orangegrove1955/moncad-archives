@@ -18,22 +18,18 @@ function App() {
           <li>
             <Link to="/Dance">Dance</Link>
           </li>
-          <li>
-            <Link to="/images">Gallery</Link>
-          </li>
         </ul>
       </nav>
       <main>
         <Switch>
-          <Route path="/images">
-            <Gallery key={"gallery"} path={""}></Gallery>
-          </Route>
-          <Route path="/Cheer">
+          <Route exact path="/Cheer">
             <Menu key={"cheer"} name={"Cheer"}></Menu>
           </Route>
-          <Route path="/Dance">
+          <Route path="/Cheer/:year/:comp/:team" component={Gallery} />
+          <Route exact path="/Dance">
             <Menu key={"dance"} name={"Dance"}></Menu>
           </Route>
+          <Route path="/Dance/:year/:comp/:team" component={Gallery} />
         </Switch>
       </main>
     </Router>
