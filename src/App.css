@@ -1,0 +1,83 @@
+body {
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.landing {
+  width: 100%;
+  height: 100%;
+  background: #004c97;
+  background-image: linear-gradient(transparent 40%, black),
+    url("https://api.moncad.com.au/Cheer/2019/Nationals/1003.%20Monash%20University%20Atlas%20-%20Uni%20Fisu%20Premi%20AG/IMG_8135.JPG");
+  background-size: cover;
+  background-blend-mode: normal;
+}
+
+nav {
+  background: #004c97;
+  color: white;
+  height: 100%;
+  width: 15%;
+  text-decoration: none;
+}
+
+nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav > ul > li {
+  margin: 2rem;
+  padding: 1rem;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+
+  color: white;
+}
+
+main {
+  height: 100%;
+  width: 85%;
+  overflow: auto;
+}
+
+video {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 1rem;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  #root {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+  }
+  main {
+    width: 100%;
+    height: 85%;
+  }
+}
