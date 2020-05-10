@@ -1,25 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./Menu";
 import Gallery from "./Gallery";
 import Landing from "./Landing";
+import Sidebar from "./Sidebar";
 import "./App.css";
 
 function App() {
   return (
     <Router>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/Cheer">Cheer</Link>
-          </li>
-          <li>
-            <Link to="/Dance">Dance</Link>
-          </li>
-        </ul>
+        <Sidebar />
       </nav>
       <main>
         <Switch>
